@@ -1,0 +1,52 @@
+package util;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+
+public class Utility {
+
+	public static void writeDataLine(String filePath, String headerName, String dataValue) {
+		File file = new File(filePath);
+		try {
+			FileWriter outputfile = new FileWriter(file, true);
+			CSVWriter writer = new CSVWriter(outputfile, ',', CSVWriter.NO_QUOTE_CHARACTER,
+					CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
+			if (Utility.parseCSVHeaderLine(filePath)==null) {
+				String[] header = { headerName };
+				writer.writeNext(header);
+			}
+			String[] data = { dataValue };
+			writer.writeNext(data);
+			writer.close();
+		} catch (IOException e) {}
+	}
+
+	public static void parseCSVLineByLine(String filePath) {
+		try {
+			CSVReader reader = new CSVReader(new FileReader(filePath));
+			String[] nextLine;
+			while ((nextLine = reader.readNext()) != null) {
+				for (String token : nextLine) {
+					System.out.println(token);
+				}
+			}
+		} catch (Exception e) {}
+	}
+
+	public static String parseCSVHeaderLine(String filePath) {
+		try {
+			CSVReader reader = new CSVReader(new FileReader(filePath));
+			String[] nextLine = reader.readNext();
+			for (String token : nextLine) {
+				return token;
+			}
+		} catch (Exception e) {}
+
+		return null;
+	}
+}

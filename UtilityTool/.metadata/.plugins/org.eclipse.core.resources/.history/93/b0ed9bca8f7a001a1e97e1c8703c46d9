@@ -1,0 +1,63 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelDriven {
+
+	public static void main(String[] args) throws IOException {
+		
+		String file = "E:\\JMeterProject\\apache-jmeter-5.2.1\\bin\\EPSv2\\Reports\\QuotationExcel_1.xlsx";
+		FileInputStream fis = new FileInputStream(file);
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		
+		int sheets = workbook.getNumberOfSheets();
+		
+		XSSFSheet sheet = workbook.getSheet("Price Sheet5");
+		
+		Row eighthrow = sheet.getRow(8);
+		Row ninthrow = sheet.getRow(9);
+		
+		Iterator<Cell> cellsOfEighthRow = eighthrow.cellIterator();
+		Iterator<Cell> cellsOfNingthRow = ninthrow.cellIterator();
+		
+		while(cellsOfEighthRow.hasNext())
+		{
+			Cell cell = cellsOfEighthRow.next();
+			
+		}
+		
+		
+//		while(cells.hasNext()) {
+//			Cell cell = cells.next();
+//			if(cell.getCellType() == Cell.CELL_TYPE_STRING) {
+//				System.out.println(cell.getStringCellValue());
+//			}
+//			else if(cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+//				System.out.println(NumberToTextConverter.toText(cell.getNumericCellValue()));
+//			}
+//		}
+		
+		
+//		Iterator<Row> rows = sheet.iterator();
+//		
+//		Row firstrow = rows.next();
+//		
+//		Iterator<Cell> cells = firstrow.cellIterator();
+//		
+//		while(cells.hasNext())
+//		{
+//			Cell cell = cells.next();
+//			System.out.println(cell.getStringCellValue());
+//		}
+		
+		
+	}
+
+}

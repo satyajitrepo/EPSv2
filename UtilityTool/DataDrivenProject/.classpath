@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/poi-3.10-FINAL.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/poi-ooxml-3.10-FINAL.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/poi-ooxml-schemas-3.10-FINAL.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/xml-apis-1.0.b2.jar"/>
+	<classpathentry kind="lib" path="E:/JMeterProject/apache-jmeter-5.2.1/bin/EPSv2/Resources/new/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
